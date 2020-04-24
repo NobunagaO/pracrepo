@@ -15,8 +15,8 @@ class Minesweeper():
         while True:
             if cnt <= 0:
                 break
-            x1 = randint(0, self.width)
-            y1 = randint(0, self.height)
+            x1 = randint(0, self.width-1)
+            y1 = randint(0, self.height-1)
             if self.realfield[y1][x1] > 0:
                 continue
             self.realfield[y1][x1] = 1
