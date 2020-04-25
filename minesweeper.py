@@ -46,13 +46,27 @@ class Minesweeper():
                 print(field[i][j], end=",")
             print()
 
+    def play_game(self, cnt):
+        x, y = [int(i) for i in input().split()]
+        self.set_bombs(x, y, cnt)
+        self.output_field()
+        while True:
+            print("="*10)
+            x, y = [int(i) for i in input().split()]
+            self.open_here(x, y)
+            self.outputfield()
+            if self.numfield[y][x] == 9:
+                break
+
     def output_field(self):
         for i in range(1, self.height+1):
             for j in range(1, self.width+1):
-                pass
+                out = str(self.numfield[i][j]) if self.outputfield[i][j] == 1 \
+                        and self.numfield[i][j] != 9 \
+                        else "B" if self.outputfield[i][j] == 1 and self.numfield[i][j] == 9 \
+                        else "#"
+                print(out,end="")
 
 if __name__ == "__main__":
     m = Minesweeper(10, 10)
-    m.set_bombs(1, 1, 10)
-    m.print_field(m.realfield)
-    m.print_field(m.numfield)
+    m.play_game(10)
