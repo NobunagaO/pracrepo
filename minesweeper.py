@@ -66,6 +66,7 @@ class Minesweeper():
                         else "B" if self.outputfield[i][j] == 1 and self.numfield[i][j] == 9 \
                         else "#"
                 print(out,end="")
+            print()
 
 if __name__ == "__main__":
     m = Minesweeper(10, 10)
