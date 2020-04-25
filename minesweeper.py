@@ -54,7 +54,7 @@ class Minesweeper():
             print("="*10)
             x, y = [int(i) for i in input().split()]
             self.open_here(x, y)
-            self.outputfield()
+            self.output_field()
             if self.numfield[y][x] == 9:
                 break
 
