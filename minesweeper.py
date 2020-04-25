@@ -24,6 +24,8 @@ class Minesweeper():
         for i in range(1, self.height+1):
             for j in range(1, self.width+1):
                 self.numfield[i][j] = self.count_around(j, i)
+                if self.realfield[i][j] == 1:
+                    self.numfield[i][j] = 9
 
     def count_around(self, x, y):
         cnt = 0
@@ -35,11 +37,19 @@ class Minesweeper():
                     cnt += 1
         return cnt
 
+    def open_here(self, x, y):
+        self.outputfield[y][x] = 1
+
     def print_field(self, field):
         for i in range(1, self.height+1):
             for j in range(1, self.width+1):
                 print(field[i][j], end=",")
             print()
+
+    def output_field(self):
+        for i in range(1, self.height+1):
+            for j in range(1, self.width+1):
+                pass
 
 if __name__ == "__main__":
     m = Minesweeper(10, 10)
