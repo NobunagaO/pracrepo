@@ -77,8 +77,8 @@ class Minesweeper():
             for j in range(1, self.width+1):
                 out = str(self.numfield[i][j]) if self.outputfield[i][j] == 1 \
                         and self.numfield[i][j] != 9 \
-                        else "B" if self.outputfield[i][j] == 1 and self.numfield[i][j] == 9 \
-                        else "#"
+                        else "B" if self.outputfield[i][j] == 1 \
+                        and self.numfield[i][j] == 9 else "#"
                 print(out,end="")
             print()
 
