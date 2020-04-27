@@ -1,6 +1,6 @@
 from random import randint
 
-class Minesweeper():
+class Minesweeper:
     def __init__(self, height, width):
         self.height = height
         self.width = width
